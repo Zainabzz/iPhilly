@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhillyEyes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Rubik Glitch', sans-serif;
+        background-image: url('philly1.jpg'); 
+        background-size: cover; 
+        background-position: center; 
+        background-attachment: fixed; 
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 500px;
+        background-color: rgba(255, 255, 255, 0.05); 
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+    h1 {
+     font-size: 3rem;
+    margin-bottom: 0.9rem;
+    color: #00ffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: -120px; 
+}
+
+.tagline {
+  font-size: 1.5rem; 
+  margin-bottom: 2rem;
+  color: #d1d1d1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  top: -115px;
+}
+
+      button {
+        background-color: #00ffff;
+        color: #000;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      }
+
+      button:hover {
+        background-color: #0ff;
+        transform: scale(1.05);
+      }
+
+      .output {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        color: #ffffff;
+      }
+
+      .image-preview {
+        margin-top: 1rem;
+        max-width: 100%;
+        border-radius: 12px;
+        border: 2px solid #00ffff;
+        display: none;
+      }
+
+      .debug-output {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #aaaaaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>iPhilly</h1>
+      <p class="tagline">Let's visualize Philadelphia together.</p>
+      <div id="output" class="output"></div>
+      <img id="placeImage" class="image-preview" alt="Place preview" />
+      <div id="description" class="output"></div>
+      <div id="debug" class="debug-output"></div>
+    </div>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var v = document.createElement("script");
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '681f4a0492465c3b0c8fb7af' },
+            url: 'https://general-runtime.voiceflow.com/',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com/"
+            }
+          });
+        };
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        document.body.appendChild(v);
+      });
+    </script>
+  </body>
+</html>
